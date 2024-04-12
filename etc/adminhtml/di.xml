@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Cms\Api\BlockRepositoryInterface">
+        <plugin name="Irs_CmsSetup::disallow_overwrite" type="Irs\CmsSetup\Model\DisallowOverwritePlugin"/>
+    </type>
+    <type name="Magento\Cms\Api\PageRepositoryInterface">
+        <plugin name="Irs_CmsSetup::disallow_overwrite" type="Irs\CmsSetup\Model\DisallowOverwritePlugin"/>
+    </type>
+    <virtualType name="Irs\CmsSetup\Model\BlockPageFormModifierPool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="modifier_name" xsi:type="array">
+                    <item name="class" xsi:type="string">Irs\CmsSetup\Model\DisallowOverwriteFormModifier</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Cms\Model\Block\DataProvider">
+        <arguments>
+            <argument name="pool" xsi:type="object">Irs\CmsSetup\Model\BlockPageFormModifierPool</argument>
+        </arguments>
+    </type>
+    <type name="Magento\CmsStaging\Model\Block\Identifier\DataProvider">
+        <arguments>
+            <argument name="pool" xsi:type="null"/>
+        </arguments>
+    </type>
+    <type name="Magento\Cms\Model\Page\DataProvider">
+        <arguments>
+            <argument name="pool" xsi:type="object">Irs\CmsSetup\Model\BlockPageFormModifierPool</argument>
+        </arguments>
+    </type>
+</config>

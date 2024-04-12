@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="cms_block">
+        <column name="allow_overwrite" xsi:type="smallint" nullable="false" default="0" comment="Used in Irs\\CmsSetup\\Model\\UpdateStrategy::Skip"/>
+    </table>
+    <table name="cms_page">
+        <column name="allow_overwrite" xsi:type="smallint" nullable="false" default="0" comment="Used in Irs\\CmsSetup\\Model\\UpdateStrategy::Skip"/>
+    </table>
+</schema>

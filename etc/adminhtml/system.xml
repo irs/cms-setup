@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="dev">
+            <group id="irs_cmssetup" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>CMS Setup</label>
+                <field id="update_strategy" translate="label comment" type="select" sortOrder="1" showInDefault="1" canRestore="1">
+                    <label>Content Update Strategy</label>
+                    <source_model>Irs\CmsSetup\Model\UpdateStrategyOptions</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

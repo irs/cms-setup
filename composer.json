@@ -1,0 +1,25 @@
+{
+  "name": "irs/module-cmssetup",
+  "description": "CMS content migration module.",
+  "type": "magento2-module",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "config": {
+    "sort-packages": true
+  },
+  "version": "1.0.0",
+  "require": {
+    "magento/module-cms": "104.0.*",
+    "php": ">=8.1"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Irs\\CmsSetup\\": ""
+    }
+  }
+}
